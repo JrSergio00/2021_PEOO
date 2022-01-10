@@ -1,0 +1,30 @@
+using System;
+
+class Circulo
+{
+    public double raio;
+
+    public double area()
+    {
+        return 3.14*(raio*raio);
+    }
+    public double circunferencia(double raio)
+    {
+        return 3.14*(raio*2);
+    }
+    public void mensagem()
+    {
+        double obterArea = area();
+        Console.WriteLine("Área do Círculo: "+obterArea);
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Circulo a = new Circulo();
+        a.raio = 10;
+        a.mensagem();
+    }
+}
