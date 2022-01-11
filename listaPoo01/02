@@ -1,0 +1,52 @@
+using System;
+
+class Disciplina
+{
+    public string nome;
+    public double nota1;
+    public double nota2;
+    public double nota3;
+    public double nota4;
+    public double provaFinal;
+
+    public double mediaParcial()
+    {
+        return ((nota1*2)+(nota2*2)+(nota3*3)+(nota4*3))/10;
+    }
+    public string situacao()
+    {
+        if(mediaParcial()>=60)
+        {
+            return "aprovado";
+        }else
+        {
+            if((mediaParcial()+provaFinal)/2 >= 60)
+            {
+                return "aprovado na média final";
+            }
+            else
+            {
+                return "reprovado";
+            }
+        }
+    }
+    public void mensagem()
+    {
+        Console.WriteLine("Situação do aluno na disciplina de "+nome+": "+situacao());
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+    Disciplina a = new Disciplina();
+    a.nome = "matemática";
+    a.nota1 = 60;
+    a.nota2 = 60;
+    a.nota3 = 60;
+    a.nota4 = 60;
+    a.provaFinal = 60;
+    a.mensagem();
+    }
+}
